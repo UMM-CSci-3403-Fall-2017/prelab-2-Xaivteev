@@ -29,7 +29,7 @@ char* strip(char* str) {
     --last_non_space;
   }
 
-  // If num_spaces >= size then that means that the string
+  // If num_spaces >= size then that means that the string char* in c
   // consisted of nothing but spaces, so we'll return the
   // empty string.
   if (num_spaces >= size) {
@@ -66,6 +66,10 @@ int is_clean(char* str) {
   // 0 if they're equal, and a positive value if the first is
   // greater than the second.
   result = strcmp(str, cleaned);
+
+  if(cleaned[0] != '\0'){
+	  free(cleaned);
+  }
 
   return result == 0;
 }
